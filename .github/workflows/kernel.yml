@@ -24,6 +24,10 @@ jobs:
       - name: ⏰ Set builddate
         id: generate-builddate
         run: echo "BUILDDATE=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+      - name: Generate defconfig
+        run: |
+           cd $GITHUB_WORKSPACE/OnePlus-7--Nethunter-Kernel
+            make O=out ARCH=arm64 gulch_defconfig
 
   Build-Kernel:
     name: "🐎 Build kernel"
