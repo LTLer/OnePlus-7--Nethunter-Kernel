@@ -23,12 +23,7 @@ jobs:
 
       - name: ⏰ Set builddate
         id: generate-builddate
-        run: echo "BUILDDATE=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
-      - name: Generate defconfig
-        run: |
-           cd $GITHUB_WORKSPACE/OnePlus-7--Nethunter-Kernel
-            make O=out ARCH=arm64 gulch_defconfig
-
+        run: echo "BUILDDATE=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT  
   Build-Kernel:
     name: "🐎 Build kernel"
     runs-on: ubuntu-22.04  # Updated from ubuntu-20.04
@@ -187,6 +182,11 @@ jobs:
               echo "${{ env.WORKSPACE }}/$toolchain_name/$subPath" >> $GITHUB_PATH
             done
           done
+      - name: 📘 Generate gulch_defconfig
+        working-directory: ${{ env.KERNEL_NAME }}
+        run: |
+          echo "Generating gulch_defconfig..."
+          make O=${{ env.OUT_DIR }} ARCH=arm64 gulch_defconfig
 
       - name: 😎 Set build args
         id: generate-args
