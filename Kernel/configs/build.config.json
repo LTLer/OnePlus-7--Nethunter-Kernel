@@ -1,7 +1,7 @@
 [
   {
     "kernelSource": {
-      "name": "op7",
+      "name": "Oneplus7Series",
       "repo": "https://github.com/yaap/kernel_oneplus_sm8150",
       "branch": "sixteen",
       "device": "op7",
