@@ -10,7 +10,7 @@
     "toolchains": [
       {
         "name": "clang",
-        "url": "https://mirror.ghproxy.com/https://github.com/android/llvm-build-configs/releases/download/clang-r550928/clang-r550928.tar.gz",
+        "url": "https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/tags/clang-r550928.tar.gz",
         "binaryEnv": [
           "bin"
         ]
@@ -24,7 +24,7 @@
         ]
       },
       {
-        "repo": "https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9",
+        "repo": "httpsgithub.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9",
         "branch": "lineage-19.1",
         "name": "arm",
         "binaryEnv": [
@@ -61,3 +61,4 @@
     "enableLXC": true
   }
 ]
+
